@@ -21,3 +21,5 @@ def convert_text_to_speech(Text_to_Convert):
     synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
     #synthesizer.start_speaking_text_async(Text_to_Convert)
     synthesizer.speak_text(Text_to_Convert)
+
+#convert_text_to_speech("Hello")
