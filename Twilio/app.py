@@ -1,6 +1,8 @@
 ﻿from flask import Flask, request
 from twilio import twiml
 from date_time import get_now
+from text_to_speech import convert_text_to_speech
+import os
 
 # Receives texts that were sent to the Twilio # and logs them into Message Log.text
 # Requires ngrok on port 5000
@@ -13,6 +15,8 @@ def sms():
     print("You have a message from: " + str(number))
     print(message_body)
     log(number, message_body)
+
+    convert_text_to_speech(message_body)
 
     return str('Your message has been relayed.')
 
