@@ -2,7 +2,7 @@ import websockets
 import asyncio
 import base64
 import json
-from configure import auth_key
+from configure import auth_key #configure.py file with the auth_key variable
 from quotes import selQuote
 from magicbox import selmagicbox
 import re
