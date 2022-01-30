@@ -6,7 +6,7 @@ import time
 
 def convert_text_to_speech(Text_to_Convert):
     Text_to_Convert = str(Text_to_Convert)
-    file_location = "Twilio/Audio/I fucking cannot.wav"
+    #file_location = "Twilio/Audio/I cannot.wav"
 
     load_dotenv()
     Azure_Speech_Key = os.environ.get('AZURE_SPEECH_KEY')
