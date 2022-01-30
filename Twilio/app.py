@@ -3,8 +3,10 @@ from twilio import twiml
 from date_time import get_now
 from text_to_speech import convert_text_to_speech
 import os
+import time
 
 # Receives texts that were sent to the Twilio # and logs them into Message Log.text
+# Uses text_to_speech.py(Azure speech API) to convert the incoming text message to speech
 # Requires ngrok on port 5000
 
 app = Flask(__name__)
@@ -16,6 +18,7 @@ def sms():
     print(message_body)
     log(number, message_body)
 
+    convert_text_to_speech("You have a message from: " + number[2:])
     convert_text_to_speech(message_body)
 
     return str('Your message has been relayed.')
