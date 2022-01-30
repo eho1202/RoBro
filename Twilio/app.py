@@ -2,6 +2,9 @@
 from twilio import twiml
 from date_time import get_now
 
+# Receives texts that were sent to the Twilio # and logs them into Message Log.text
+# Requires ngrok on port 5000
+
 app = Flask(__name__)
 @app.route('/sms', methods=['POST'])
 def sms():
